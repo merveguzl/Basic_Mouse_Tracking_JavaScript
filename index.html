@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script>
+        
+      // Gezinilen noktanın koordinatları.
+      // Coordinates of hovering point.
+      function showCoords(event) {
+          var x = event.clientX;
+          var y = event.clientY;
+          var coor = "X coords: " + x + ", Y coords: " + y;
+          document.getElementById("demo").innerHTML = coor;
+        }
+
+        function clearCoor() {
+          document.getElementById("demo").innerHTML = "";
+        }
+
+      // Tıklanan noktanın koordinatları.
+      // Coordinates of the clicked point.
+      function showCoords2(event) {
+        var x = event.clientX;
+        var y = event.clientY;
+        var coords = "X coords: " + x + ", Y coords: " + y;
+        document.getElementById("demo2").innerHTML = coords;
+      }
+    </script>
+  </head>
+  <body>
+    <div style="flex: 1; align-items: center; justify-content: center;" >
+      <div 
+        onmousemove="showCoords(event)"
+        onmouseout="clearCoor()"
+        onclick="showCoords2(event)"
+        style="background-color:burlywood; width:50%; height: 80%; margin-left: 25%; border-radius: 20px;" >
+      </div>
+      <p id="demo"></p>
+      <p id="demo2"></p>
+    </div>
+  </body>
+</html>
